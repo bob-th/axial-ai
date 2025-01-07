@@ -1,28 +1,31 @@
+import { LinearGradient } from 'expo-linear-gradient';
+import { useState } from 'react';
 import { StyleSheet, Text, Touchable, TouchableHighlight, TouchableOpacity, View, Platform} from 'react-native';
 
 
 
 export function TopicCard({title}: {title: string}) {
-    return (
-      <TouchableHighlight
-        activeOpacity={0.6}
-        underlayColor={"#000000"}
-        onPress={() => {}}
-        style={styles.default}
+  return (
+    <TouchableHighlight
+      onPress={() => {}}
+      style={styles.container}
+    >
+      <LinearGradient
+      colors={["#040404", "#2F2F2F"]}
+      start={{x: 0.5, y: 0.5}}
+      style={styles.gradientBox}
       >
         <Text style={styles.text}>{title}</Text>
-      </TouchableHighlight>
-    )
+      </LinearGradient>
+      
+    </TouchableHighlight>
+  )
 }
 
 const styles = StyleSheet.create({
-  default: {
+  container: {
     fontSize: 16,
     lineHeight: 24,
-
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
 
     backgroundColor: "#272727",
 
@@ -44,6 +47,14 @@ const styles = StyleSheet.create({
 
       }
     })
+  },
+  gradientBox: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+
+    width: "100%",
+    height: "100%"
   },
   text: {
     color: "white"

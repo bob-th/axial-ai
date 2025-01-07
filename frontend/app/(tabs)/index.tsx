@@ -21,6 +21,8 @@ const styles = StyleSheet.create({
   },
   layout: {
     flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
     ...Platform.select({
       native:{
         flexDirection: "column"

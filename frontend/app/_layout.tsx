@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     ...Platform.select({
       native: {
         flex: 1,
-
+        
       },
       default: {
         flex: 1, 
