@@ -12,10 +12,15 @@ export default function RootLayout() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <View style={styles.container}>
         <Sidebar>
-
+          
         </Sidebar>
         <Stack>
-          <Stack.Screen name="(tabs)" />
+          <Stack.Screen 
+            options={{
+              headerShown: Platform.OS == "android" || Platform.OS == "ios"
+            }}
+            name="(tabs)" 
+          />
         </Stack>
       </View>
     </ThemeProvider>
@@ -32,6 +37,7 @@ const styles = StyleSheet.create({
       default: {
         flex: 1, 
         flexDirection: "row"
+        
       }
     })
   },

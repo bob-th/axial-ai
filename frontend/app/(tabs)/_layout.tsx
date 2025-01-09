@@ -14,6 +14,7 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
+        animation: Platform.select({native: "shift", default:"none"}),
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
         // tabBarButton: HapticTab,
@@ -27,6 +28,10 @@ export default function TabLayout() {
             
           },
         }),
+        tabBarPosition: Platform.select({
+          native: "bottom",
+          default: "bottom"
+        })
       }}>
       <Tabs.Screen
         name="index"
@@ -39,6 +44,13 @@ export default function TabLayout() {
         name="chat"
         options={{
           title: 'Chat',
+        //   tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="study"
+        options={{
+          title: 'Study',
         //   tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
         }}
       />

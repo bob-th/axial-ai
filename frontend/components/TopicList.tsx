@@ -15,19 +15,24 @@ export function TopicList({topics}: {topics: Topic[]}) {
         numColumns={3}
         data={topicArray}
         keyExtractor={(item, index) => `${item.title}-${index}`} // Ensure unique keys
-        renderItem={({ item }) => <TopicCard title={item.title} />}
+          renderItem={({ item }) => {
+            return <TopicCard title={item.title} />
+          }
+        }
       />
   )
 }
 
 const styles = StyleSheet.create({
     default: {
+      marginLeft: "auto",
+      marginRight: "auto",
+
+      padding: 10,
+
       backgroundColor: DarkTheme.colors.background,
     },
     layout: {
-      flex: 1,
-      justifyContent: "center",
-      alignItems: "center"
     }
   });
   
