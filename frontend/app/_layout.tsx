@@ -5,6 +5,7 @@ import { DarkTheme, DefaultTheme, ThemeProvider } from "@react-navigation/native
 import { Stack } from "expo-router";
 import { StyleSheet, Platform, View } from "react-native";
 import Sidebar from "@/components/Sidebar";
+import Header from '@/components/Header';
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();

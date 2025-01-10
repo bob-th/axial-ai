@@ -14,7 +14,11 @@ export default function Study() {
     <View
       style={[styles.layout]}
     > 
-        <Text style={{textAlign: "center", color: "white", fontSize: 32, fontWeight: "bold"}}>Your Flashcards</Text>
+        <Text style={{
+          textAlign: "center", color: "white", fontSize: 32, fontWeight: "bold"}}
+        >
+          Your Decks
+        </Text>
         <TopicList topics={decks} />
     </View>
   );

@@ -30,7 +30,7 @@ export default function TabLayout() {
         }),
         tabBarPosition: Platform.select({
           native: "bottom",
-          default: "bottom"
+          default: "top"
         })
       }}>
       <Tabs.Screen
@@ -52,6 +52,12 @@ export default function TabLayout() {
         options={{
           title: 'Study',
         //   tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="create"
+        options={{
+          title: "Create"
         }}
       />
     </Tabs>
