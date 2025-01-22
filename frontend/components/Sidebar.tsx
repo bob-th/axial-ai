@@ -9,6 +9,7 @@ export default function Sidebar() {
                     
                 </Button>
             </Link>
+            
         </View>
     )
 }

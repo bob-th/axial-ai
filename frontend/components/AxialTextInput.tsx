@@ -1,15 +1,21 @@
 import { useState } from "react";
-import { TextInput, StyleSheet } from "react-native";
+import { TextInput, StyleSheet, Alert } from "react-native";
 import { useForm, Controller} from "react-hook-form";
 
 export default function AxialTextInput() {
-  const [value, onChangeText] = useState('title')
+  const [value, onChangeText] = useState('')
 
   return (
     <TextInput
         editable
         value={value}
         onChangeText={(text) => onChangeText(text)}
+        placeholder="Enter title here..."
+        placeholderTextColor={"grey"}
+        returnKeyType={"done"}
+        onSubmitEditing={() => {
+          Alert.alert(value)
+        }}
         style={styles.textInput}
     />
   )
@@ -18,8 +24,9 @@ export default function AxialTextInput() {
 const styles = StyleSheet.create({
   textInput: {
     borderRadius: 5,
-    borderColor: "red",
+    borderColor: "white",
     borderWidth: 5,
-    color: "red"
+    padding: 5,
+    color: "white"
   }
 })

@@ -11,7 +11,12 @@ export default function Create() {
     <View
       style={[styles.container]}
     > 
-        <AxialTextInput/>
+      <Text style={{
+          textAlign: "center", color: "white", fontSize: 32, fontWeight: "bold"}}
+        >
+          Create a new deck
+      </Text>
+      <AxialTextInput/>
     </View>
   );
 }
@@ -21,15 +26,9 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    ...Platform.select({
-      native:{
-        flexDirection: "column"
-      },
-      default: {
-        flexDirection: "row"
-      }
-    })
+    rowGap: 10,
   },
 });
