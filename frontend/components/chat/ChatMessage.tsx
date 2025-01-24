@@ -4,22 +4,32 @@ import { StyleSheet, Text, Touchable, TouchableOpacity } from 'react-native';
 type Props = PropsWithChildren<{
     message: string;
     mside?: 'left' | 'right';
+    time?: Date
 }>;
 
-export function ChatMessage({message, mside} : Props) {
+export function ChatMessage({message, mside, time} : Props) {
     const [msg, setMsg] = useState(message);
     const [side, setSide] = useState(mside || 'left');
+    const [statusShown, setStatusShown] = useState(false);
+    const [messageTime, setMessageTime] = useState(time && "??:??")
 
     function updateMsg() {
-        setMsg("hi");
-        setSide(side==='left'?'right':'left')
+      setMsg("hi");
+    }
+    function onPressed() {
+      setStatusShown(!statusShown);
     }
   return (
     <TouchableOpacity 
-        style={[styles.default, side==='right'? styles.right : styles.left]}
-        onPress={()=>updateMsg()}
+        onPress={onPressed}
     >
-        <Text>{msg}</Text>
+        <Text style={[
+          styles.default, 
+          side==='right'? styles.right : styles.left
+        ]}>
+          {msg}
+        </Text>
+        {statusShown && <Text style={{color: "white"}}>123</Text>}
     </TouchableOpacity>
   );
 }

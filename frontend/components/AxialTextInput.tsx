@@ -14,10 +14,11 @@ export default function AxialTextInput() {
         placeholderTextColor={"grey"}
         returnKeyType={"done"}
         onSubmitEditing={() => {
-          Alert.alert(value)
+          
         }}
         style={styles.textInput}
     />
+
   )
 }
 
